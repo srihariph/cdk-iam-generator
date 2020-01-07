@@ -1,0 +1,62 @@
+{
+  "name": "cdk-iam-generator",
+  "description": "This CDK Project helps create IAM Managed Policies and IAM Roles using JSON Configuration",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "license": "Apache-2.0",
+  "repository": {
+    "url": "https://https://github.com/srihariph/cdk-iam-policy-role-generator",
+    "type": "git"
+  },
+  "keywords": [
+    "aws",
+    "cdk"
+  ],
+  "homepage": "https://https://github.com/srihariph/cdk-iam-policy-role-generator",
+  "scripts": {
+    "package": "jsii-pacmak",
+    "build": "jsii",
+    "watch": "jsii -w",
+    "test": "jest",
+    "watch-test": "jest -w"
+  },
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "java": {
+        "package": "com.github.srihari.iamgenerator",
+        "maven": {
+          "groupId": "com.github.srihari.iamgenerator",
+          "artifactId": "cdk-iamgenerator"
+        }
+      },
+      "python": {
+        "distName": "cdk-iamgenerator",
+        "module": "cdk_iamgenerator"
+      }
+    }
+  },
+  "author": {
+    "email": "srihariph@gmail.com",
+    "name": "Srihari Prabaharan",
+    "url": "https://https://github.com/srihariph"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ]
+  },
+  "prepublish": "tsc",
+  "devDependencies": {
+    "jsii": "^0.20.11",
+    "jsii-pacmak": "^0.20.11",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@aws-cdk/core": "^1.19.0"
+  },
+  "peerDependencies": {
+    "@aws-cdk/core": "^1.19.0"
+  }
+}
