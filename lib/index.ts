@@ -1,1 +1,1 @@
-export * from './serverless-cicd';
+export * from './IamPolicyGenerator';
