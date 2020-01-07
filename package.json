@@ -6,14 +6,14 @@
   "types": "./lib/index.d.ts",
   "license": "Apache-2.0",
   "repository": {
-    "url": "https://https://github.com/srihariph/cdk-iam-policy-role-generator",
+    "url": "https://github.com/srihariph/cdk-iamgenerator.git",
     "type": "git"
   },
   "keywords": [
     "aws",
     "cdk"
   ],
-  "homepage": "https://https://github.com/srihariph/cdk-iam-policy-role-generator",
+  "homepage": "https://github.com/srihariph/cdk-iamgenerator.git",
   "scripts": {
     "package": "jsii-pacmak",
     "build": "jsii",
@@ -40,7 +40,7 @@
   "author": {
     "email": "srihariph@gmail.com",
     "name": "Srihari Prabaharan",
-    "url": "https://https://github.com/srihariph"
+    "url": "https://github.com/srihariph"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -49,14 +49,17 @@
   },
   "prepublish": "tsc",
   "devDependencies": {
+    "@types/node": "^13.1.4",
     "jsii": "^0.20.11",
     "jsii-pacmak": "^0.20.11",
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "@aws-cdk/aws-iam": "^1.19.0",
     "@aws-cdk/core": "^1.19.0"
   },
   "peerDependencies": {
+    "@aws-cdk/aws-iam": "^1.19.0",
     "@aws-cdk/core": "^1.19.0"
   }
 }
