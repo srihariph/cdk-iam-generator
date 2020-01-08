@@ -2,6 +2,16 @@
 
 This CDK Construct helps create IAM Managed Policies and IAM Roles using JSON Configuration 
 
+## Quickstart
+
+Install or update from npm
+
+TypeScript/Javascript
+
+```console
+npm i cdk-iamgenerator
+
+```
 
 ## Prerequsites
 
@@ -79,29 +89,23 @@ Configure the policies and roles to be created in config/iam_generator_config.js
     ]
 }
 ```
+
 ## Usage
 
-Typescript example
+** TypeScript **
 
+```typescript
+    import { IamPolicyGenerator, IamRoleGenerator } from '@srihariph/IamGenerator';
+
+    new IamPolicyGenerator(this,"IamPolicyGenerator",{
+        configPath:"config/iam_generator_config.json",
+        policyPath: "config/policy"
+    });
+
+    new IamRoleGenerator(this,"IamRoleGenerator",{
+        configPath:"config/iam_generator_config.json"
+    });
 ```
-import { IamPolicyGenerator, IamRoleGenerator } from '@srihariph/IamGenerator';
-
-class IamStackExample extends cdk.Stack {
-    constructor(app: cdk.App, id: string) {
-      super(app, id);
-
-        new IamPolicyGenerator(this,"IamPolicyGenerator",{
-            configPath:"config/iam_generator_config.json",
-            policyPath: "config/policy"
-        });
-
-        new IamRoleGenerator(this,"IamRoleGenerator",{
-            configPath:"config/iam_generator_config.json"
-        });
-    }
-  }
-```
-This will install the necessary CDK, then this example's dependencies, and then build your TypeScript files and your CloudFormation template.
 
 
 ## Build
