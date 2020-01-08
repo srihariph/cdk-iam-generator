@@ -95,7 +95,7 @@ Configure the policies and roles to be created in config/iam_generator_config.js
 ** TypeScript **
 
 ```typescript
-    import { IamPolicyGenerator, IamRoleGenerator } from '@srihariph/IamGenerator';
+    import { IamPolicyGenerator, IamRoleGenerator } from 'cdk-iamgenerator';
 
     new IamPolicyGenerator(this,"IamPolicyGenerator",{
         configPath:"config/iam_generator_config.json",
