@@ -1,75 +1,75 @@
 import { Construct, StackProps } from '@aws-cdk/core';
 import { readFileSync } from 'fs';
 import { IamPolicyRoleConfig, IamPolicyDocument, PoliciesEntity, Condition, RolesEntity } from './IPolicyRoleConfig';
-import { ManagedPolicy, PolicyStatement,CompositePrincipal,ServicePrincipal,AccountPrincipal,Role } from '@aws-cdk/aws-iam';
+import { ManagedPolicy, PolicyStatement, CompositePrincipal, ServicePrincipal, AccountPrincipal, Role } from '@aws-cdk/aws-iam';
 
 export interface IamPolicyGeneratorProps extends StackProps {
-    readonly configPath: string,
-    readonly policyPath: string;
+  readonly configPath: string,
+  readonly policyPath: string;
 }
 
 export interface IamRoleGeneratorProps extends StackProps {
-    readonly configPath: string
+  readonly configPath: string
 }
 
 export class IamPolicyGenerator extends Construct {
 
-    constructor(scope: Construct, id: string, props: IamPolicyGeneratorProps) {
-        super(scope, id);
-        let configjson: IamPolicyRoleConfig = JSON.parse(readFileSync(props.configPath).toString());
+  constructor(scope: Construct, id: string, props: IamPolicyGeneratorProps) {
+    super(scope, id);
+    let configjson: IamPolicyRoleConfig = JSON.parse(readFileSync(props.configPath).toString());
 
-        let policies: PoliciesEntity[] | null | undefined = configjson.policies;
-        let statement_actions: string[] | string;
-        let statement_resources: string;
-        let statement_conditions: Condition;
+    let policies: PoliciesEntity[] | null | undefined = configjson.policies;
+    let statement_actions: string[] | string;
+    let statement_resources: string;
+    let statement_conditions: Condition;
 
-        if (policies != null) {
-            for (var i = 0; i < policies.length; i++) {
+    if (policies != null) {
+      for (var i = 0; i < policies.length; i++) {
 
-                let policy_name = policies[i].policy_name;
-                let policy_file = policies[i].policy_file;
-                let policyJson: IamPolicyDocument = JSON.parse(readFileSync(props.policyPath + '/' + policy_file).toString());
-                let managedPolicy = new ManagedPolicy(this, policy_name, {
-                    managedPolicyName: policy_name
-                });
-                let iamPolicyStatement;
-                if (policyJson.Statement != null) {
-                    for (var j = 0; j < policyJson.Statement.length; j++) {
-                        if (typeof policyJson.Statement[j].Action === "string") {
-                            statement_actions = policyJson.Statement[j].Action as string;
-                            statement_resources = policyJson.Statement[j].Resource as string;
-                            statement_conditions = policyJson.Statement[j].Condition as Condition;
+        let policy_name = policies[i].policy_name;
+        let policy_file = policies[i].policy_file;
+        let policyJson: IamPolicyDocument = JSON.parse(readFileSync(props.policyPath + '/' + policy_file).toString());
+        let managedPolicy = new ManagedPolicy(this, policy_name, {
+          managedPolicyName: policy_name
+        });
+        let iamPolicyStatement;
+        if (policyJson.Statement != null) {
+          for (var j = 0; j < policyJson.Statement.length; j++) {
+            if (typeof policyJson.Statement[j].Action === "string") {
+              statement_actions = policyJson.Statement[j].Action as string;
+              statement_resources = policyJson.Statement[j].Resource as string;
+              statement_conditions = policyJson.Statement[j].Condition as Condition;
 
-                            iamPolicyStatement = new PolicyStatement({
-                                resources: [statement_resources],
-                                actions: [statement_actions],
-                                conditions: statement_conditions
-                            });
-                        } else {
-                            statement_actions = policyJson.Statement[j].Action as string[];
-                            statement_resources = policyJson.Statement[j].Resource as string;
-                            statement_conditions = policyJson.Statement[j].Condition as Condition;
+              iamPolicyStatement = new PolicyStatement({
+                resources: [statement_resources],
+                actions: [statement_actions],
+                conditions: statement_conditions
+              });
+            } else {
+              statement_actions = policyJson.Statement[j].Action as string[];
+              statement_resources = policyJson.Statement[j].Resource as string;
+              statement_conditions = policyJson.Statement[j].Condition as Condition;
 
-                            iamPolicyStatement = new PolicyStatement({
-                                resources: [statement_resources],
-                                actions: statement_actions,
-                                conditions: statement_conditions
-                            });
-                        }
-                        managedPolicy.addStatements(iamPolicyStatement);
-
-                    }
-                }
+              iamPolicyStatement = new PolicyStatement({
+                resources: [statement_resources],
+                actions: statement_actions,
+                conditions: statement_conditions
+              });
             }
+            managedPolicy.addStatements(iamPolicyStatement);
+
+          }
         }
+      }
     }
-}  
+  }
+}
 
 export class IamRoleGenerator extends Construct {
 
-    constructor(scope: Construct, id: string, props: IamRoleGeneratorProps) {
-        super(scope, id);
-        let configjson: IamPolicyRoleConfig = JSON.parse(readFileSync(props.configPath).toString());
+  constructor(scope: Construct, id: string, props: IamRoleGeneratorProps) {
+    super(scope, id);
+    let configjson: IamPolicyRoleConfig = JSON.parse(readFileSync(props.configPath).toString());
     let roles: RolesEntity[] = configjson.roles as RolesEntity[];
     let trust_service_principal: string[];
     let trust_account_principal: string[];
@@ -127,5 +127,5 @@ export class IamRoleGenerator extends Construct {
 
       }
     }
-    }
+  }
 }
