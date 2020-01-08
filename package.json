@@ -19,7 +19,8 @@
     "build": "jsii",
     "watch": "jsii -w",
     "test": "jest",
-    "watch-test": "jest -w"
+    "watch-test": "jest -w",
+    "cdk": "cdk"
   },
   "jsii": {
     "outdir": "dist",
