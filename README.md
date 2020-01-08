@@ -81,9 +81,10 @@ Configure the policies and roles to be created in config/iam_generator_config.js
 ```
 ## Usage
 
-To build this app, you need to be in this example's root folder. Then run the following:
+Typescript example
+
 ```
-import { IamPolicyGenerator, IamRoleGenerator } from '../lib/IamGenerator';
+import { IamPolicyGenerator, IamRoleGenerator } from '@srihariph/IamGenerator';
 
 class IamStackExample extends cdk.Stack {
     constructor(app: cdk.App, id: string) {
@@ -93,7 +94,7 @@ class IamStackExample extends cdk.Stack {
             configPath:"config/iam_generator_config.json",
             policyPath: "config/policy"
         });
-        
+
         new IamRoleGenerator(this,"IamRoleGenerator",{
             configPath:"config/iam_generator_config.json"
         });

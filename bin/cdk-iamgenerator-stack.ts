@@ -3,6 +3,7 @@ import { IamPolicyGenerator, IamRoleGenerator } from '../lib/IamGenerator';
 
 
 
+
 class IamStackExample extends cdk.Stack {
     constructor(app: cdk.App, id: string) {
       super(app, id);
