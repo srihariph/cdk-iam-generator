@@ -6,6 +6,10 @@
 This package is written in TypeScript and made available via [JSII] to all other supported languages. Package are available on:
 
 - [npm]
+- [PyPI] Work in Progress.
+- [GitHub packages for Java][Maven] Work in Progress.
+
+
 
 ## Quickstart
 
