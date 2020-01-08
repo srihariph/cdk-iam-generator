@@ -1,6 +1,11 @@
 # CDK IAM Generator
 
-This CDK Construct helps create IAM Managed Policies and IAM Roles using JSON Configuration 
+
+[AWS CDK] construct helps create IAM Managed Policies and IAM Roles using JSON Configuration  
+
+This package is written in TypeScript and made available via [JSII] to all other supported languages. Package are available on:
+
+- [npm]
 
 ## Quickstart
 
@@ -13,9 +18,26 @@ npm i cdk-iamgenerator
 
 ```
 
+## Usage
+
+** TypeScript **
+
+```typescript
+    import { IamPolicyGenerator, IamRoleGenerator } from 'cdk-iamgenerator';
+
+    new IamPolicyGenerator(this,"IamPolicyGenerator",{
+        configPath:"config/iam_generator_config.json",
+        policyPath: "config/policy"
+    });
+
+    new IamRoleGenerator(this,"IamRoleGenerator",{
+        configPath:"config/iam_generator_config.json"
+    });
+```
+
 ## Prerequsites
 
-Place all the Policy Json files inside config/policy in your root folder and policy file would look something like this:
+Example: Place all the Policy Json files inside config/policy in your project root and policy file would look something like this:
 
 ```json
 {
@@ -90,26 +112,13 @@ Configure the policies and roles to be created in config/iam_generator_config.js
 }
 ```
 
-## Usage
-
-** TypeScript **
-
-```typescript
-    import { IamPolicyGenerator, IamRoleGenerator } from 'cdk-iamgenerator';
-
-    new IamPolicyGenerator(this,"IamPolicyGenerator",{
-        configPath:"config/iam_generator_config.json",
-        policyPath: "config/policy"
-    });
-
-    new IamRoleGenerator(this,"IamRoleGenerator",{
-        configPath:"config/iam_generator_config.json"
-    });
-```
-
-
  ## License
 
 cdk-iamgenerator is distributed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 See [LICENSE](./LICENSE) for more information.
+
+[AWS CDK]: https://aws.amazon.com/cdk/
+[JSII]: https://github.com/aws/jsii
+
+

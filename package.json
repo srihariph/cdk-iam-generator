@@ -1,6 +1,6 @@
 {
   "name": "cdk-iamgenerator",
-  "description": "This CDK Project helps create IAM Managed Policies and IAM Roles using JSON Configuration",
+  "description": "This CDK Construct helps create IAM Managed Policies and IAM Roles using JSON Configuration",
   "version": "1.0.0",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -13,18 +13,20 @@
     "aws",
     "cdk",
     "srihariph",
+    "aws-cdk",
+    "construct",
     "iam",
     "managedpolicy",
     "iamrole"
   ],
+  "stability": "stable",
   "homepage": "https://github.com/srihariph/cdk-iamgenerator.git",
   "scripts": {
     "package": "jsii-pacmak",
     "build": "jsii",
     "watch": "jsii -w",
     "test": "jest",
-    "watch-test": "jest -w",
-    "cdk": "cdk"
+    "watch-test": "jest -w"
   },
   "jsii": {
     "outdir": "dist",
