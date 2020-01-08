@@ -115,10 +115,6 @@ Configure the policies and roles to be created in config/iam_generator_config.js
     ]
 }
 ```
-## Examples
-
-There is an example application in [./example](https://github.com/srihariph/cdk-iamgenerator/tree/master/example) showing how to generate IAM Managed Policies and IAM Role using the construct.
-
  ## License
 
 cdk-iamgenerator is distributed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
