@@ -1,5 +1,5 @@
 {
-  "name": "cdk-iamgenerator",
+  "name": "cdk-iam-generator",
   "description": "This CDK Construct helps create IAM Managed Policies and IAM Roles using JSON Configuration",
   "version": "1.0.0",
   "main": "./lib/index.js",
@@ -35,7 +35,7 @@
         "package": "com.github.srihari.iamgenerator",
         "maven": {
           "groupId": "com.github.srihari.iamgenerator",
-          "artifactId": "cdk-iamgenerator"
+          "artifactId": "cdk-iam-generator"
         }
       },
       "python": {

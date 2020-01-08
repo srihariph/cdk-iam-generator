@@ -27,7 +27,7 @@ npm i cdk-iamgenerator
 ** TypeScript **
 
 ```typescript
-    import { IamPolicyGenerator, IamRoleGenerator } from 'cdk-iamgenerator';
+    import { IamPolicyGenerator, IamRoleGenerator } from 'cdk-iam-generator';
 
     new IamPolicyGenerator(this,"IamPolicyGenerator",{
         configPath:"config/iam_generator_config.json",
