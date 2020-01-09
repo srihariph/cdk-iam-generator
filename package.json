@@ -56,11 +56,12 @@
   },
   "prepublish": "tsc",
   "devDependencies": {
+    "@aws-cdk/assert": "^1.20.0",
+    "@types/jest": "^24.0.25",
     "@types/node": "^13.1.4",
     "jsii": "^0.20.11",
     "jsii-pacmak": "^0.20.11",
-    "typescript": "^3.5.3",
-    "@types/jest": "^24.0.25"
+    "typescript": "^3.5.3"
   },
   "dependencies": {
     "@aws-cdk/aws-iam": "^1.19.0",
