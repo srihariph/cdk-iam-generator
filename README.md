@@ -15,7 +15,7 @@ Install or update from npm
 TypeScript/Javascript
 
 ```console
-npm i cdk-iamgenerator
+npm i cdk-iam-generator
 
 ```
 
@@ -134,7 +134,7 @@ See [LICENSE](./LICENSE) for more information.
 
 [AWS CDK]: https://aws.amazon.com/cdk/
 [JSII]: https://github.com/aws/jsii
-[npm]: https://www.npmjs.com/package/cdk-iamgenerator
+[npm]: https://www.npmjs.com/package/cdk-iam-generator
 [PyPI]: https://pypi.org/project/cdk-iamgenerator/
 
 
