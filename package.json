@@ -1,7 +1,7 @@
 {
   "name": "cdk-iam-generator",
   "description": "This CDK Construct helps create IAM Managed Policies and IAM Roles using JSON Configuration",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "license": "Apache-2.0",
