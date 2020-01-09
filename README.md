@@ -135,7 +135,7 @@ Configure the policies and roles to be created in config/iam_generator_config.js
 ```
  ## License
 
-cdk-iamgenerator is distributed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+cdk-iam-generator is distributed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 See [LICENSE](./LICENSE) for more information.
 
