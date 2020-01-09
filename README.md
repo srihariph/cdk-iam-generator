@@ -6,10 +6,7 @@
 This package is written in TypeScript and made available via [JSII] to all other supported languages. Package are available on:
 
 - [npm]
-- [PyPI] Work in Progress.
-- [GitHub packages for Java][Maven] Work in Progress.
-
-
+- [PyPI]
 
 ## Quickstart
 
@@ -41,7 +38,21 @@ npm i cdk-iamgenerator
 
 ## Prerequsites
 
-Example: Place all the Policy Json files inside config/policy in your project root and policy file would look something like this:
+Example folder structure for Json Configuration of Roles and Policies: 
+
+```
+config
+├── policy
+│   ├── CodeCommitArchive.json
+│   └── KMSPolicy.json
+│   └── CreateServiceLinkedRoleECS.json
+│   └── DeployService1.json
+│   └── DeployService2.json
+├── iam_generator_config.json
+
+```
+
+Place all the Policy Json files inside config/policy in your project root and policy file would look something like this:
 
 ```json
 {
@@ -124,6 +135,7 @@ See [LICENSE](./LICENSE) for more information.
 [AWS CDK]: https://aws.amazon.com/cdk/
 [JSII]: https://github.com/aws/jsii
 [npm]: https://www.npmjs.com/package/cdk-iamgenerator
+[PyPI]: https://pypi.org/project/cdk-iamgenerator/
 
 
 
