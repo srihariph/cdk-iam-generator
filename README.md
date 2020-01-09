@@ -19,6 +19,13 @@ npm i cdk-iam-generator
 
 ```
 
+Python
+
+```console
+pip install cdk-iamgenerator
+
+```
+
 ## Usage
 
 ** TypeScript **
