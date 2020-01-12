@@ -22,7 +22,7 @@
   "stability": "stable",
   "homepage": "https://github.com/srihariph/cdk-iam-generator.git",
   "scripts": {
-    "package": "jsii-pacmak",
+    "package": "jsii-pacmak -v",
     "build": "jsii",
     "watch": "jsii -w",
     "test": "jest",
@@ -41,6 +41,11 @@
       "python": {
         "distName": "cdk-iamgenerator",
         "module": "cdk_iamgenerator"
+      },
+      "dotnet": {
+        "namespace": "Srihari.IAMGenerator",
+        "packageId": "Srihari.IAMGenerator",
+        "signAssembly": false
       }
     }
   },
