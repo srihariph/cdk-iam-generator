@@ -7,6 +7,7 @@ This package is written in TypeScript and made available via [JSII] to all other
 
 - [npm]
 - [PyPI]
+- [nuget]
 
 ## Quickstart
 
@@ -143,6 +144,10 @@ See [LICENSE](./LICENSE) for more information.
 [JSII]: https://github.com/aws/jsii
 [npm]: https://www.npmjs.com/package/cdk-iam-generator
 [PyPI]: https://pypi.org/project/cdk-iamgenerator/
+[nuget]: https://www.nuget.org/packages/Srihari.IAMGenerator/
+
+
+
 
 
 
