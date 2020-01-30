@@ -45,7 +45,7 @@ export class IamPolicyGenerator extends Construct {
 
               iamPolicyStatement = new PolicyStatement({
                 resources: [statement_resources],
-                actions: [statement_actions],
+                actions: statement_actions,
                 conditions: statement_conditions
               });
             managedPolicy.addStatements(iamPolicyStatement);
