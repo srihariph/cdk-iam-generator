@@ -36,26 +36,18 @@ export class IamPolicyGenerator extends Construct {
         if (policyJson.Statement != null) {
           for (var j = 0; j < policyJson.Statement.length; j++) {
             if (typeof policyJson.Statement[j].Action === "string") {
-              statement_actions = policyJson.Statement[j].Action as string;
-              statement_resources = policyJson.Statement[j].Resource as string;
-              statement_conditions = policyJson.Statement[j].Condition as Condition;
-
-              iamPolicyStatement = new PolicyStatement({
-                resources: [statement_resources],
-                actions: [statement_actions],
-                conditions: statement_conditions
-              });
+              statement_actions = [policyJson.Statement[j].Action] as string[];  
             } else {
               statement_actions = policyJson.Statement[j].Action as string[];
-              statement_resources = policyJson.Statement[j].Resource as string;
-              statement_conditions = policyJson.Statement[j].Condition as Condition;
+            }
+             statement_resources = policyJson.Statement[j].Resource as string;
+             statement_conditions = policyJson.Statement[j].Condition as Condition;
 
               iamPolicyStatement = new PolicyStatement({
                 resources: [statement_resources],
                 actions: statement_actions,
                 conditions: statement_conditions
               });
-            }
             managedPolicy.addStatements(iamPolicyStatement);
 
           }
